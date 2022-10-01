@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### References
+
+See this Youtube video:
+https://www.youtube.com/watch?v=bMq2riFCF90
+
+See this blog post:
+https://learnetto.com/blog/react-form-validation
+https://reactform.herokuapp.com/
+https://github.com/learnetto/react-form-validation-demo
