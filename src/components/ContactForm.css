@@ -1,12 +1,13 @@
-/* .contact-form-wrapper {
-    width: 400px;
-} */
+.contact-form-wrapper {
+    /* width: 400px; */
+    margin: auto;
+}
 
 .contact-form {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    /* width: 100%; */
+    width: 100%;
     font-size: 16px;
     color: white;
 }
