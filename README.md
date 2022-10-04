@@ -78,3 +78,6 @@ See this blog post:
 https://learnetto.com/blog/react-form-validation
 https://reactform.herokuapp.com/
 https://github.com/learnetto/react-form-validation-demo
+
+Additional resources:
+https://www.youtube.com/watch?v=4pG8VboW8iE
