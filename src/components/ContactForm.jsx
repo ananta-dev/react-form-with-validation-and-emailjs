@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-// import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser'
 import './ContactForm.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,28 +7,32 @@ const ContactForm = () => {
     const form = useRef()
     const navigate = useNavigate()
 
+    console.log('display .env contents')
+    console.log(process.env.REACT_APP_EMAILJS_API_PUBLIC_KEY)
+    console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID)
+    console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID)
+
     const sendEmail = e => {
         e.preventDefault()
 
-        navigate('/success')
-
-        // emailjs
-        //     .sendForm(
-        //         'freenrg_2721987G9187YUI',
-        //         'template_5ypv78d',
-        //         form.current,
-        //         'mLJ4O0x0IgV--MoHn'
-        //     )
-        //     .then(
-        //         result => {
-        //             console.log(result.text)
-        //             console.log('message sent')
-        //         },
-        //         error => {
-        //             console.log('error while attempting to send email')
-        //             console.log(error.text)
-        //         }
-        //     )
+        emailjs
+            .sendForm(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                form.current,
+                process.env.REACT_APP_EMAILJS_API_PUBLIC_KEY
+            )
+            .then(
+                result => {
+                    console.log(result.text)
+                    console.log('message sent')
+                    navigate('/success')
+                },
+                error => {
+                    console.log('error while attempting to send email')
+                    console.log(error.text)
+                }
+            )
     }
 
     return (
