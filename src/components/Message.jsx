@@ -5,16 +5,13 @@ function Message() {
     return (
         <div className='message-container'>
             <div className='message-wrapper'>
-                <h1>Message</h1>
+                <h2>Looking for Juan Guirao's portfolio?</h2>
+                <p>Juan is currently working on it!</p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean eu sapien velit. Fusce vulputate porta vestibulum.
-                    Sed gravida tellus sed nisi pulvinar, vel mollis nisi
-                    feugiat. Donec fringilla dolor non metus tempor fermentum.
-                    Praesent sollicitudin efficitur venenatis. Pellentesque
-                    laoreet, ipsum ut fringilla feugiat, est erat facilisis
-                    erat, quis pharetra dui mi nec sapien. Nunc lacinia nisl non
-                    pretium lacinia. Morbi mollis a lorem non rhoncus.
+                    If you would like him to notify you when his portfolio
+                    website is ready, please use the form to the right to leave
+                    your email address. Juan will ping you as soon as he has
+                    deployed it.
                 </p>
             </div>
         </div>

@@ -1,34 +1,38 @@
 import React, { useRef } from 'react'
-import emailjs from '@emailjs/browser'
+// import emailjs from '@emailjs/browser'
 import './ContactForm.css'
+import { useNavigate } from 'react-router-dom'
 
 const ContactForm = () => {
     const form = useRef()
+    const navigate = useNavigate()
 
     const sendEmail = e => {
         e.preventDefault()
 
-        emailjs
-            .sendForm(
-                'freenrg_2721987G9187YUI',
-                'template_5ypv78d',
-                form.current,
-                'mLJ4O0x0IgV--MoHn'
-            )
-            .then(
-                result => {
-                    console.log(result.text)
-                    console.log('message sent')
-                },
-                error => {
-                    console.log('error while attempting to send email')
-                    console.log(error.text)
-                }
-            )
+        navigate('/success')
+
+        // emailjs
+        //     .sendForm(
+        //         'freenrg_2721987G9187YUI',
+        //         'template_5ypv78d',
+        //         form.current,
+        //         'mLJ4O0x0IgV--MoHn'
+        //     )
+        //     .then(
+        //         result => {
+        //             console.log(result.text)
+        //             console.log('message sent')
+        //         },
+        //         error => {
+        //             console.log('error while attempting to send email')
+        //             console.log(error.text)
+        //         }
+        //     )
     }
 
     return (
-        <div className='contact-form-wrapper'>
+        <div className='contact-form-container'>
             <form ref={form} onSubmit={sendEmail} className='contact-form'>
                 {' '}
                 <label>Name</label>

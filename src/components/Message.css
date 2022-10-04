@@ -1,12 +1,34 @@
 .message-container {
+    /* display: flex; */
     font-size: 1.5rem;
     color: white;
-    width: 50%;
+    width: 41%;
+
+    /* background-color: pink; */
 }
 
 .message-wrapper {
     font-size: 1.5rem;
     color: white;
-    width: 50%;
+    width: 88%;
     margin: auto;
+    /* background-color: green; */
+}
+
+.message-wrapper h2 {
+    margin: 0.8rem 0 1rem 0;
+}
+
+.message-wrapper p {
+    margin-bottom: 0.8rem;
+}
+
+@media screen and (max-width: 880px) {
+    .message-container {
+        width: 81%;
+    }
+
+    .message-wrapper h2 {
+        margin: 0 0 1rem 0;
+    }
 }

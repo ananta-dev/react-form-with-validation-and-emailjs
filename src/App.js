@@ -1,13 +1,14 @@
 import './App.css'
-import Contact from './components/ContactForm'
-import Message from './components/Message'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Success from './pages/Success'
 
 function App() {
     return (
-        <div className='App'>
-            <Message />
-            <Contact />
-        </div>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/success' element={<Success />} />
+        </Routes>
     )
 }
 
