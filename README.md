@@ -71,13 +71,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### References
 
-See this Youtube video:
 https://www.youtube.com/watch?v=bMq2riFCF90
-
-See this blog post:
 https://learnetto.com/blog/react-form-validation
 https://reactform.herokuapp.com/
 https://github.com/learnetto/react-form-validation-demo
-
-Additional resources:
 https://www.youtube.com/watch?v=4pG8VboW8iE
+https://blog.shahednasser.com/how-to-create-and-validate-forms-in-react-using-formik-and-yup/
