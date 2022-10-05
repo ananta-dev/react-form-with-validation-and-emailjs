@@ -53,8 +53,10 @@ const ContactForm = () => {
         },
 
         validationSchema: Yup.object({
-            user_name: Yup.string().required(),
-            user_email: Yup.string().email().required(),
+            user_name: Yup.string().required('Name is required'),
+            user_email: Yup.string()
+                .email('Please enter valid email address')
+                .required('Email address is required'),
             message: Yup.string(),
         }),
         onSubmit: function (values) {
@@ -66,15 +68,40 @@ const ContactForm = () => {
         <div className='contact-form-container'>
             <form
                 ref={form}
-                onSubmit={formik.handleSubmit}
+                onSubmit={e => {
+                    e.preventDefault()
+                    formik.handleSubmit(e)
+                }}
                 className='contact-form'
             >
                 {' '}
                 <label>Name</label>
-                <input type='text' name='user_name' />
+                <input
+                    type='text'
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.user_name}
+                    name='user_name'
+                />
+                {formik.touched.user_name && formik.errors.user_name && (
+                    <span className='form-error-warning'>
+                        {formik.errors.user_name}
+                    </span>
+                )}
                 <label>Email</label>
-                <input type='email' name='user_email' />
-                <label>Message</label>
+                <input
+                    type='email'
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.user_email}
+                    name='user_email'
+                />
+                {formik.touched.user_email && formik.errors.user_email && (
+                    <span className='form-error-warning'>
+                        {formik.errors.user_email}
+                    </span>
+                )}
+                <label>Message (Optional)</label>
                 <textarea name='message' />
                 <input type='submit' value='Send' />
             </form>

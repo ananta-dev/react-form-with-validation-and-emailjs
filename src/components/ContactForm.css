@@ -52,6 +52,10 @@
     height: 3rem;
 }
 
+.form-error-warning {
+    color: rgb(255, 138, 146);
+}
+
 @media screen and (max-width: 880px) {
     .contact-form-container {
         width: 80%;
