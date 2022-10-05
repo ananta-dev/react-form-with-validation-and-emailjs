@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import emailjs from '@emailjs/browser'
 import './ContactForm.css'
 import { useNavigate } from 'react-router-dom'
@@ -6,28 +6,19 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 const ContactForm = () => {
-    const form = useRef()
     const navigate = useNavigate()
 
-    console.log('display .env contents')
-    console.log(process.env.REACT_APP_EMAILJS_API_PUBLIC_KEY)
-    console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID)
-    console.log(process.env.REACT_APP_EMAILJS_TEMPLATE_ID)
-
-    const sendEmail = e => {
-        e.preventDefault()
-
+    const sendEmail = values => {
         try {
             emailjs
-                .sendForm(
+                .send(
                     process.env.REACT_APP_EMAILJS_SERVICE_ID,
                     process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                    form.current,
+                    values,
                     process.env.REACT_APP_EMAILJS_API_PUBLIC_KEY
                 )
                 .then(
                     result => {
-                        console.log(result.text)
                         navigate('/success')
                     },
                     error => {
@@ -60,6 +51,9 @@ const ContactForm = () => {
             message: Yup.string(),
         }),
         onSubmit: function (values) {
+            console.log('in useFormik --- onSubtit function Values:')
+            console.log({ values })
+
             sendEmail(values)
         },
     })
@@ -67,14 +61,12 @@ const ContactForm = () => {
     return (
         <div className='contact-form-container'>
             <form
-                ref={form}
                 onSubmit={e => {
                     e.preventDefault()
                     formik.handleSubmit(e)
                 }}
                 className='contact-form'
             >
-                {' '}
                 <label>Name</label>
                 <input
                     type='text'
@@ -102,7 +94,12 @@ const ContactForm = () => {
                     </span>
                 )}
                 <label>Message (Optional)</label>
-                <textarea name='message' />
+                <textarea
+                    name='message'
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.message}
+                />
                 <input type='submit' value='Send' />
             </form>
         </div>

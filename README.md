@@ -77,3 +77,4 @@ https://reactform.herokuapp.com/
 https://github.com/learnetto/react-form-validation-demo
 https://www.youtube.com/watch?v=4pG8VboW8iE
 https://blog.shahednasser.com/how-to-create-and-validate-forms-in-react-using-formik-and-yup/
+https://jhanitish.medium.com/reactjs-emailjs-9cde62546364
