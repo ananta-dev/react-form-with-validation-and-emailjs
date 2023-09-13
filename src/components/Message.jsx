@@ -8,7 +8,7 @@ function Message() {
                 <h2>Looking for Juan Guirao's portfolio?</h2>
                 <p>Juan is currently working on it!</p>
                 <p>
-                    If you would like him to notify you when his portfolio
+                    If you would like Juan to notify you when his portfolio
                     website is ready, please use the form to the right to leave
                     your email address. Juan will ping you as soon as he has
                     deployed it.
