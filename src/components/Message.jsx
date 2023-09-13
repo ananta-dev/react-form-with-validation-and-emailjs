@@ -10,8 +10,8 @@ function Message() {
                 <p>
                     If you would like Juan to notify you when his portfolio
                     website is ready, please use the form to the right to leave
-                    your email address. Juan will ping you as soon as he has
-                    deployed it.
+                    your name and email address. Juan will ping you as soon as
+                    he has deployed it.
                 </p>
             </div>
         </div>
