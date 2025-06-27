@@ -15,7 +15,7 @@ function Error({ errorMessage }) {
             </p>
             <p>
                 If you wish to help Juan, please send him an email at
-                juan@freenrg.dev with the following error message:
+                juan@ananta.dev with the following error message:
             </p>
             <p className='error-message'>"{location.state.errorMessage}"</p>
             <button
